@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="mainCSS.css">
+  <script src="jquery-3.1.0.min.js"></script>
+  <script src="jquery-ui-1.10.4.min.js"></script>
+  <script src="mainJS.js"></script>
+</head>
+<body onload="init()" onorientationchange="onResizeFunc()">
+  <div class="main">
+    <div class="clock">
+    <canvas class="canvas" id="myCanvas" width="600" height="600">
+      Your browser does not support the HTML5 canvas tag.
+    </canvas>
+    </div>
+    <div class="setting">
+      <select id="phrase">
+        <option value="Quarter Past">Quarter Past</option>
+        <option value="Quarter To">Quarter To</option>
+        <option value="Half Past">Half Past</option>
+      </select>
+      <select id="hour">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <button onclick="setTimeOnClock()" class="btn">Set</button>
+      <button onclick="reset()" class="btn">Reset</button>
+    </div>
+  </div>
+</body>
+</html>
