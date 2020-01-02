@@ -11,7 +11,7 @@ function init() {
     size = wdt;
     draw();
   } else {
-    size = ht;
+    size = ht < wdt/2 ? ht : wdt/2;
     draw();
   }
 }
@@ -60,25 +60,25 @@ function draw(dt)
     
     //Hour Ticks
     if (i % 5 == 0) {
-          context.lineWidth = 2;
-          iPointX = sineAngle *(radius -55);
-    iPointY = cosAngle *(radius -60);
-    oPointX = sineAngle *(radius -40);
-    oPointY = cosAngle *(radius -40);
-          context.strokeText(i/5,iPointX-20,iPointY+30)
+      context.lineWidth = 2;
+      iPointX = sineAngle *(radius -55);
+      iPointY = cosAngle *(radius -60);
+      oPointX = sineAngle *(radius -40);
+      oPointY = cosAngle *(radius -40);
+      context.strokeText(i/5,iPointX-20,iPointY+30)
     }
     else
     {
-    //Minute Ticks
-          context.lineWidth = 3; 			
-    iPointX = sineAngle *(radius -50);
-    iPointY = cosAngle *(radius -50);
-    oPointX = sineAngle *(radius -48);
-    oPointY = cosAngle *(radius -48);
-          context.beginPath();
-    context.moveTo(iPointX,iPointY);
-        context.lineTo(oPointX,oPointY);
-          context.stroke();
+      //Minute Ticks
+      context.lineWidth = 3; 			
+      iPointX = sineAngle *(radius -50);
+      iPointY = cosAngle *(radius -50);
+      oPointX = sineAngle *(radius -48);
+      oPointY = cosAngle *(radius -48);
+      context.beginPath();
+      context.moveTo(iPointX,iPointY);
+      context.lineTo(oPointX,oPointY);
+      context.stroke();
     }
   }
 
@@ -129,16 +129,16 @@ function draw(dt)
   context.font="25px Helvetica light";
   if (hrs > 12)
   {
-    context.fillText(hrs-12,-30,canvas.height/2);
+    context.fillText(hrs-12,-30,canvas.height/8);
   }
   else
   {
-    context.fillText(hrs,-30,canvas.height/2);
+    context.fillText(hrs,-30,canvas.height/8);
   }
-  context.fillText(":",-6,canvas.height/2);
-  context.fillText(min,0,canvas.height/2);
-  context.fillText(":",25,canvas.height/2);
-  context.fillText(sec,30,canvas.height/2);
+  context.fillText(":",-6,canvas.height/8);
+  context.fillText(min,0,canvas.height/8);
+  context.fillText(":",25,canvas.height/8);
+  context.fillText(sec,30,canvas.height/8);
   context.closePath();
     
   context.restore();

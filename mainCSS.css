@@ -13,8 +13,24 @@
 .setting {
   display: flex;
   height: max-content;
+  background-color: blueviolet;
 }
 
-.btn {
-  margin: 10px;
+.setting > * {
+  padding: 20px;
+  font-size: 20vh;
+}
+
+@media screen and (orientation:portrait) { 
+  .setting > * {
+    padding: 20px;
+    font-size: 5vw;
+  }
+}
+
+@media screen and (orientation:landscape) { 
+  .setting > * {
+    padding: 20px;
+    font-size: 3vh;
+  }
 }
